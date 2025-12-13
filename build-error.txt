@@ -1,0 +1,69 @@
+﻿
+> market-diary@0.1.0 build
+> next build
+
+node.exe :  笞 Warning: Next.js inferred your 
+workspace root, but it may not be correct.
+発生場所 C:\Program Files\nodejs\npm.ps1:29 文字:3
++   & $NODE_EXE $NPM_CLI_JS $args
++   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ( 
+    笞 Warning: Ne...not be correct.:String)  
+   [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandEr 
+   ror
+ 
+ We detected multiple lockfiles and selected t
+he directory of C:\Users\hun03\package-lock.js
+on as the root directory.
+ To silence this warning, set `turbopack.root`
+ in your Next.js config, or consider removing 
+one of the lockfiles if it's not needed.
+   See https://nextjs.org/docs/app/api-referen
+ce/config/next-config-js/turbopack#root-direct
+ory for more information.
+ Detected additional lockfiles: 
+   * C:\Users\hun03\Documents\MarketDairy\mark
+et-diary\package-lock.json
+
+   笆ｲ Next.js 16.0.8 (Turbopack)
+   - Environments: .env.local
+
+   Creating an optimized production build ...
+
+[2m[3.90ms][22m [@tailwindcss/postcss] app\g
+lobals.css
+[2m[3.81ms][22m  [2m 竊ｳ [22mQuick bail che
+ck
+
+ 笨・Compiled successfully in 12.6s
+   Running TypeScript ...
+Failed to compile.
+
+./app/stats/page.tsx:188:79
+Type error: 'percent' is possibly 'undefined'.
+
+[0m [90m 186 |[39m                         
+            outerRadius[33m=[39m{[35m80[39
+m}
+ [90m 187 |[39m                             
+        dataKey[33m=[39m[32m"value"[39m
+[31m[1m>[22m[39m[90m 188 |[39m          
+                           label[33m=[39m{({
+ name[33m,[39m percent }) [33m=>[39m [32m
+`${name} ${(percent * 100).toFixed(0)}%`[39m}
+ [90m     |[39m                             
+                                              
+    [31m[1m^[22m[39m
+ [90m 189 |[39m                             
+    [33m>[39m
+ [90m 190 |[39m                             
+        {typeData[33m.[39mmap((entry[33m,[
+39m index) [33m=>[39m (
+ [90m 191 |[39m                             
+            [33m<[39m[33mCell[39m key[33m
+=[39m{[32m`cell-${index}`[39m} fill[33m=[
+39m{entry[33m.[39mcolor} [33m/[39m[33m>[
+39m[0m
+Next.js build worker exited with code: 1 and s
+ignal: null
