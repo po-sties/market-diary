@@ -9,13 +9,23 @@ export function getDb(): Client {
         const authToken = process.env.TURSO_AUTH_TOKEN;
 
         if (!url) {
-            throw new Error("TURSO_DATABASE_URL is not set");
+            // ビルド時は警告のみ表示し、ダミークライアントを返す
+            if (process.env.NODE_ENV === 'production' && typeof window === 'undefined') {
+                console.warn("TURSO_DATABASE_URL is not set, using placeholder");
+                // ビルド時用のダミーURL
+                client = createClient({
+                    url: "file:local.db",
+                    authToken: authToken || undefined,
+                });
+            } else {
+                throw new Error("TURSO_DATABASE_URL is not set");
+            }
+        } else {
+            client = createClient({
+                url,
+                authToken,
+            });
         }
-
-        client = createClient({
-            url,
-            authToken,
-        });
     }
     return client;
 }
