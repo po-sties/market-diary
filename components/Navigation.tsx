@@ -47,6 +47,18 @@ export default function Navigation() {
                             {theme === "light" ? "dark_mode" : "light_mode"}
                         </span>
                     </button>
+
+                    <button
+                        onClick={async () => {
+                            await fetch("/api/auth/logout", { method: "POST" });
+                            window.location.href = "/login";
+                        }}
+                        className="theme-toggle"
+                        aria-label="ログアウト"
+                        title="ログアウト"
+                    >
+                        <span className="material-symbols-outlined">logout</span>
+                    </button>
                 </div>
             </div>
         </nav>
