@@ -47,13 +47,11 @@ function createSessionToken(): string {
 export const config = {
     matcher: [
         /*
-         * 以下を除く全てのパスにマッチ:
+         * Match all request paths except for the ones starting with:
          * - api (API routes)
-         * - _next/static (static files)
-         * - _next/image (image optimization files)
-         * - favicon.ico (favicon file)
-         * - login (login page)
+         * - _next (Next.js internals)
+         * - static files (images, etc.)
          */
-        '/((?!api|_next/static|_next/image|favicon.ico|login).*)',
+        '/((?!api|_next|favicon.ico).*)',
     ],
 };
