@@ -8,21 +8,6 @@ export async function POST(request: NextRequest) {
         const validUsername = process.env.AUTH_USERNAME || "admin";
         const validPassword = process.env.AUTH_PASSWORD || "market2024";
 
-        console.log("[DEBUG] Login attempt:", {
-            receivedUser: username,
-            validUser: validUsername,
-            hasPassword: !!password,
-            envVarsSet: {
-                username: !!process.env.AUTH_USERNAME,
-                password: !!process.env.AUTH_PASSWORD,
-            },
-            // 実際の値（デバッグのみ、本番では削除すること）
-            actualEnvUsername: process.env.AUTH_USERNAME,
-            actualEnvPassword: process.env.AUTH_PASSWORD ? '***' : undefined,
-            validPasswordFirstChar: validPassword?.[0],
-            receivedPasswordFirstChar: password?.[0],
-        });
-
         // 認証チェック
         if (username === validUsername && password === validPassword) {
             // セッショントークンを生成
