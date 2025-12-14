@@ -37,7 +37,7 @@ export function middleware(request: NextRequest) {
 function createSessionToken(): string {
     // 環境変数から認証情報を取得してトークンを生成
     const username = process.env.AUTH_USERNAME || 'admin';
-    const password = process.env.AUTH_PASSWORD || 'password';
+    const password = process.env.AUTH_PASSWORD || 'market2024';
 
     // 簡易的なハッシュ（本番環境ではより強力な暗号化を推奨）
     const token = Buffer.from(`${username}:${password}:market-diary`).toString('base64');
